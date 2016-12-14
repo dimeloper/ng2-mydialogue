@@ -15,8 +15,8 @@
                 </li>
                 <li>
                     <a [routerLink]="[homeUrl]">
-                        <i class="fa fa-home"></i>
-                        <span>&nbsp; Home</span>
+                        <i class="fa fa-tachometer"></i>
+                        <span>&nbsp; My Dashboard</span>
                     </a>
                 </li>
                 <li>
@@ -27,14 +27,20 @@
                 </li>
                 <li>
                     <a [routerLink]="['home']">
-                        <i class="fa fa-tachometer"></i>
-                        <span>&nbsp; My Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a [routerLink]="['home']">
                         <i class="fa fa-briefcase"></i>
                         <span>&nbsp; Self Assessment</span>
+                    </a>
+                </li>
+                <li *ngIf="isAdmin">
+                    <a [routerLink]="['home']">
+                        <i class="fa fa-user"></i>
+                        <span>&nbsp; Assess Employees</span>
+                    </a>
+                </li>
+                <li *ngIf="isAdmin">
+                    <a [routerLink]="['home']">
+                        <i class="fa fa-users"></i>
+                        <span>&nbsp; My Team</span>
                     </a>
                 </li>
                 <li>

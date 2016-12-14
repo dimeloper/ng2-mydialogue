@@ -24,6 +24,7 @@ export class SidebarComponent {
     currentEmail: string;
     currentUser: User;
     currentName: string;
+		isAdmin: boolean = false;
 
 		homeUrl: string = '/dashboard/home';
 
@@ -37,7 +38,8 @@ export class SidebarComponent {
                 this.currentUser = data.json();
                 this.userService.setCurrentUser(this.currentUser);
                 if (this.currentUser.role === "TEAM_LEAD" || this.currentUser.role === "ADMIN") {
-										this.homeUrl = '/dashboard/admin'
+										this.homeUrl = '/dashboard/admin';
+										this.isAdmin = true;
 										this.router.navigate(['/dashboard', 'admin']);
                 }
 								this.currentName = this.currentUser.firstName + ' ' + this.currentUser.lastName;

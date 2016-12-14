@@ -22,7 +22,7 @@ export class LoginService {
     }
 
     sendToken(token: string) {
-        let tokenUrl2 = 'http://localhost:8080/rest/user/users';
+        let tokenUrl2 = 'http://localhost:8080/rest/user/login/success';
         console.log('Bearer ' + token);
 
         let getHeaders = new Headers({ 'Authorization': 'Bearer ' + token });
