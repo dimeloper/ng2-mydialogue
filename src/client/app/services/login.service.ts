@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 
 export interface Credentials {
     email: string;
@@ -10,7 +11,7 @@ export interface Credentials {
 export class LoginService {
     token: string;
 
-    constructor(private http: Http) { }
+    constructor(private http: Http, private router: Router) { }
 
     sendCredential(model: Credentials) {
         let tokenUrl1 = 'http://localhost:8080/user/login';
@@ -30,7 +31,7 @@ export class LoginService {
     logout() {
         localStorage.setItem('token', '');
         localStorage.setItem('currentEmail', '');
-        alert('You just logged out.');
+        this.router.navigate(['']);
     }
 
     checkLogin() {

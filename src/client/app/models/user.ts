@@ -9,5 +9,6 @@ export class User {
     public team: string;
     public entity: string;
     public birthday: Date;
-    public joinDate: Date;
+    public joinedDate: Date;
+    public role: string;
 }

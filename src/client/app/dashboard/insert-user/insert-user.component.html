@@ -7,58 +7,64 @@
                         <h4 class="card-title">User Data</h4>
                     </div>
                     <div class="card-block">
-                      <form>
+                      <form (ngSubmit)="onSubmit()" #registerForm = "ngForm">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <input type="email" class="form-control" id="inputEmail1" name="email"
+                          aria-describedby="emailHelp" placeholder="Enter email"
+                          [(ngModel)]="newUser.email" ngControl="email" required>
                         </div>
                         <div class="form-group">
                           <label for="inputPassword1">Password</label>
-                          <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                          <input type="password" class="form-control" id="inputPassword1"
+                          name="password" placeholder="Password"
+                          [(ngModel)]="newUser.password" ngControl="password" required>
                         </div>
                         <div class="form-group">
                           <label for="inputPassword2">Confirm Password</label>
-                          <input type="password" class="form-control" id="inputPassword2" placeholder="Confirm Password">
+                          <input type="password" class="form-control" id="inputPassword2"
+                          name="cpassword" placeholder="Confirm Password">
                         </div>
                         <div class="form-group">
                           <label for="inputFirstName1">First Name</label>
-                          <input type="text" class="form-control" id="inputFirstName1" placeholder="First Name">
+                          <input type="text" class="form-control" id="inputFirstName1" placeholder="First Name"
+                          name="firstName" [(ngModel)]="newUser.firstName" ngControl="firstName" required>
                         </div>
                         <div class="form-group">
                           <label for="inputLastName1">Last Name</label>
-                          <input type="text" class="form-control" id="inputLastName1" placeholder="Last Name">
+                          <input type="text" class="form-control" id="inputLastName1" placeholder="Last Name"
+                          name="lastName" [(ngModel)]="newUser.lastName" ngControl="lastName" required>
                         </div>
                         <div class="form-group">
                           <label for="teamSelect1">Team</label>
-                          <select class="form-control" id="teamSelect1">
-                            <option>Website</option>
-                            <option>Games</option>
-                            <option>HR</option>
-                            <option>Office</option>
-                            <option>Finance</option>
-                            <option>BISON</option>
+                          <select class="form-control" id="teamSelect1" name="team"
+                          [(ngModel)]="newUser.team" ngControl="team" required>
+                            <option *ngFor="let team of teams" [value]="team">{{team}}</option>
                           </select>
                         </div>
                         <div class="form-group">
                           <label for="roleSelect1">Role</label>
-                          <select class="form-control" id="roleSelect1">
-                            <option>Employee</option>
-                            <option>Team Lead</option>
+                          <select class="form-control" id="roleSelect1" name="role"
+                          [(ngModel)]="newUser.role" ngControl="role" required>
+                            <option *ngFor="let role of roles" [value]="role.value">{{role.label}}</option>
                           </select>
                         </div>
                         <div class="form-group">
                           <label for="officeSelect1">Office</label>
-                          <select class="form-control" id="officeSelect1" disabled>
-                            <option>Hamburg</option>
+                          <select class="form-control" id="officeSelect1" name="office"
+                          [(ngModel)]="newUser.office" ngControl="office" disabled>
+                            <option *ngFor="let office of offices" [value]="office">{{office}}</option>
                           </select>
                         </div>
                         <div class="form-group row">
                           <label for="birthday-input" class="col-xs-2 col-form-label">Birthday</label>
-                          <input class="form-control" type="date" id="birthday-input">
+                          <input class="form-control" type="date" id="birthday-input" name="birthday"
+                          [(ngModel)]="newUser.birthday" ngControl="birthday">
                           </div>
                         <div class="form-group row">
                           <label for="join-date-input" class="col-xs-2 col-form-label">Join Date</label>
-                          <input class="form-control" type="date" id="join-date-input">
+                          <input class="form-control" type="date" id="join-date-input" name="joinedDate"
+                          [(ngModel)]="newUser.joinedDate" ngControl="joinedDate">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>

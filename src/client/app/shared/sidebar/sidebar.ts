@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../../services/login.service';
 
 @Component({
 	moduleId: module.id,
@@ -15,4 +16,19 @@ export class SidebarComponent {
 			this.showMenu = element;
 		}
 	}
+
+	myLocalStorage: any;
+	currentEmail: string;
+
+	constructor(private loginService: LoginService) {
+			this.myLocalStorage = localStorage;
+			this.currentEmail = this.myLocalStorage.getItem('currentEmail');
+	}
+
+	onClick() {
+			if (this.loginService.checkLogin()) {
+					this.loginService.logout();
+			}
+	}
+
 }

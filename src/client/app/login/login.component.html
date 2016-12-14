@@ -16,6 +16,10 @@
 				</div>
 				<button class="btn rounded-btn" type="submit"> Log in </button>
 			</form>
+			<div [hidden]="!loginService.checkLogin()">
+		    <h3>Logged In Successfully! </h3>
+		    <h2>Welcome back, {{currentEmail}}!</h2>
+		  </div>
 		</div>
 	</div>
 </div>

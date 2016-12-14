@@ -32,7 +32,7 @@ export class LoginComponent {
                         this.model.email = '';
                         this.model.password = '';
 
-												this.router.navigate(['/dashboard']);
+												this.router.navigate(['/dashboard', 'home']);
                     },
                     error => console.log(error)
                 );

@@ -15,11 +15,11 @@ import { SidebarComponent } from '../shared/index';
 @NgModule({
     imports: [
         CommonModule,
-    	RouterModule,
-    	HomeModule,
-      AdminModule,
-      InsertUserModule,
-    	BSComponentModule,
+        RouterModule,
+        HomeModule,
+        AdminModule,
+        InsertUserModule,
+        BSComponentModule,
         BlankPageModule,
     ],
     declarations: [DashboardComponent, SidebarComponent],

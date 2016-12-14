@@ -10,7 +10,7 @@
                 <li>
                     <a [routerLink]="['home']" class="logo">
                         <img src="assets/images/flat-avatar.png" class="user-avatar" />
-                        <p class="text-xs-center">Sebastian Eicke</p>
+                        <p class="text-xs-center">{{currentEmail}}</p>
                     </a>
                 </li>
                 <li>
@@ -55,7 +55,7 @@
                     </ul>
                 </li> -->
                 <li>
-                    <a [routerLink]="['']"><i class="fa fa-sign-out"></i><span>&nbsp;&nbsp; Logout</span></a>
+                    <a (click)="onClick()"><i class="fa fa-sign-out"></i><span>&nbsp;&nbsp; Logout</span></a>
                 </li>
             </ul>
         </div>
