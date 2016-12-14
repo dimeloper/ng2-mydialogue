@@ -1,5 +1,9 @@
 @import '../../assets/bootstrap/variables-blue';
 
+.zeal-logo {
+		width: 100px;
+}
+
 .login-page {
 	background: $brand-primary;
 	position: absolute;
@@ -69,17 +73,17 @@
 		input::-webkit-input-placeholder {
 		color: rgba(255,255,255,0.6) !important;
 		}
-		 
+
 		input:-moz-placeholder { /* Firefox 18- */
-		color: rgba(255,255,255,0.6) !important;  
+		color: rgba(255,255,255,0.6) !important;
 		}
-		 
+
 		input::-moz-placeholder {  /* Firefox 19+ */
-		color: rgba(255,255,255,0.6) !important;  
+		color: rgba(255,255,255,0.6) !important;
 		}
-		 
-		input:-ms-input-placeholder {  
-		color: rgba(255,255,255,0.6) !important;  
+
+		input:-ms-input-placeholder {
+		color: rgba(255,255,255,0.6) !important;
 		}
 	}
 	.form-content {
