@@ -1,6 +1,8 @@
 import { Route } from '@angular/router';
 
 import { HomeRoutes } from './home/index';
+import { AdminRoutes } from './admin/index';
+import { InsertUserRoutes } from './insert-user/index';
 import { BlankPageRoutes } from './blank-page/index';
 import { BSComponentRoutes } from './bs-component/index';
 
@@ -12,6 +14,8 @@ export const DashboardRoutes: Route[] = [
     	component: DashboardComponent,
     	children: [
 	    	...HomeRoutes,
+        ...AdminRoutes,
+        ...InsertUserRoutes,
 	    	...BSComponentRoutes,
 	    	...BlankPageRoutes
     	]

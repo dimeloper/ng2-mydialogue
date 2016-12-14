@@ -1,0 +1,20 @@
+<div class="animate">
+    <div class="animate">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <img class="img-fluid" src="assets/images/md_header.jpg" width="100%" alt="Image">
+                    <div class="card-block">
+                        <h4 class="card-title">Welcome Admin!</h4>
+                        <p class="card-text">This is your administration panel. Here you can insert new employees,
+                        manage access rights, edit the competencies and review employees' development.</p>
+                    </div>
+                    <div class="card-block">
+                      <a [routerLink]="['/dashboard', 'insertUser']" class="btn btn-primary">New Employee</a>
+                      <a [routerLink]="['dashboard', 'home']" class="btn btn-primary">New Competency</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
