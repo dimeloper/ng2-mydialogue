@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
+import { User } from '../models/user';
+import { UserService } from './user.service';
 
 export interface Credentials {
     email: string;
@@ -11,7 +13,7 @@ export interface Credentials {
 export class LoginService {
     token: string;
 
-    constructor(private http: Http, private router: Router) { }
+    constructor(private http: Http, private router: Router, private userService: UserService) { }
 
     sendCredential(model: Credentials) {
         let tokenUrl1 = 'http://localhost:8080/user/login';
@@ -28,20 +30,19 @@ export class LoginService {
         return this.http.get(tokenUrl2, { headers: getHeaders });
     }
 
-    logout() {
+    logout(): void {
         localStorage.setItem('token', '');
         localStorage.setItem('currentEmail', '');
+        this.userService.setCurrentUser(null);
         this.router.navigate(['']);
     }
 
-    checkLogin() {
+    checkLogin(): boolean {
         if (localStorage.getItem('currentEmail') !== null &&
             localStorage.getItem('currentEmail') !== '' &&
             localStorage.getItem('token') !== null &&
             localStorage.getItem('token') !== '') {
 
-            console.log(localStorage.getItem('currentEmail'));
-            console.log(localStorage.getItem('token'));
             return true;
         } else {
             return false;

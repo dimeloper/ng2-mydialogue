@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard.component';
 
 import { SidebarComponent } from '../shared/index';
 
+import { UserService } from '../services/user.service';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -23,7 +25,8 @@ import { SidebarComponent } from '../shared/index';
         BlankPageModule,
     ],
     declarations: [DashboardComponent, SidebarComponent],
-    exports: [DashboardComponent, SidebarComponent]
+    exports: [DashboardComponent, SidebarComponent],
+    providers: [UserService]
 })
 
 export class DashboardModule { }

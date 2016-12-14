@@ -27,9 +27,9 @@ export class LoginComponent {
                 localStorage.setItem('token', JSON.parse(JSON.stringify(data))._body);
                 this.loginService.sendToken(localStorage.getItem('token')).subscribe(
                     data => {
-                        this.currentEmail = this.model.email;
+												this.currentEmail = this.model.email;
                         localStorage.setItem('currentEmail', this.model.email);
-                        this.model.email = '';
+												this.model.email = '';
                         this.model.password = '';
 
 												this.router.navigate(['/dashboard', 'home']);
